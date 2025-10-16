@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página con encabezado e imagen</title>
+  <style>
+    /* Estilos generales */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    /* Encabezado */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background-color: rgb(230, 157, 29);
+      color: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .menu-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .logo img {
+      height: 65px;
+      width: auto;
+      border-radius: 6px;
+    }
+
+    .btn-entrar {
+      background-color: #ffcc00;
+      border: none;
+      color: #111;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn-entrar:hover {
+      background-color: #ffe066;
+      transform: scale(1.05);
+    }
+
+    /* Imagen principal */
+    .banner {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .banner img {
+      width: 90%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Formulario */
+    form {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffe7a6;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #000000;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: rgb(230, 157, 29);
+      box-shadow: 0 0 5px rgba(230, 157, 29, 0.5);
+    }
+
+    form input[type="submit"] {
+      background-color: rgb(230, 157, 29);
+      color: rgb(255, 255, 255);
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: rgb(255, 180, 50);
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .left-section {
+        flex-direction: column;
+      }
+
+      .banner img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left-section">
+      <span class="menu-icon">&#9776;</span>
+      <div class="logo">
+        <img src="foto1.jpg" alt="Logo de la página">
+      </div>
+    </div>
+    <button class="btn-entrar">Entrar</button>
+  </header>
+
+  <div class="banner">
+    <img src="foto2.jpg" alt="Imagen principal">
+  </div>
+
+  <form action="procesar.php" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Correo:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>
